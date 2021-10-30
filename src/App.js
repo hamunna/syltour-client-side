@@ -7,6 +7,7 @@ import {
 import './App.css';
 import Header from "./pages/common/Header/Header";
 import HomePage from "./pages/Home/HomePage/HomePage";
+import SignIn from "./pages/SignIn/SignIn";
 
 function App() {
   return (
@@ -19,9 +20,13 @@ function App() {
           <HomePage></HomePage>
         </Route>
 
+        <Route path="/signIn">
+          <SignIn></SignIn>
+        </Route>
 
       </Switch>
     </Router>
+
   );
 }
 
