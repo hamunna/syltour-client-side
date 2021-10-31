@@ -42,6 +42,13 @@
   padding: 3px;
 }
 
+.motives-list li {
+  list-style-type: none;
+  margin-bottom: 10px;
+  color:rgb(20, 79, 88);
+  font-weight: 700;
+}
+
 #hero-section {
   height: 700px;
   background-image: url('/src/images/banner.jpg');

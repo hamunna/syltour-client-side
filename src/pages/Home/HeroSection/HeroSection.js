@@ -1,13 +1,10 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import Header from '../../common/Header/Header';
 
 const HeroSection = () => {
 	return (
 		<div id="hero-section">
 			<div className="hero-bg-overlay">
-				<Header></Header>
-
 				<Container>
 					<div className="hero-content text-uppercase text-white">
 						<h1>Welcome!</h1>

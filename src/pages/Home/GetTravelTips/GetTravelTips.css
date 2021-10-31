@@ -1,0 +1,31 @@
+
+#get-tips-filed input, #get-tips-filed button {
+	width: 400px;
+	height: 50px;
+	border: none;
+	outline: none;
+	padding-left: 20px;
+	border-radius: 60px;
+}
+
+#get-tips-filed button {
+	width: 100px;
+	/* background-color: #153439; */
+	background-color: rgb(255, 124, 91);
+	color: #fff;
+	font-weight: 600;
+	margin-left: -80px;
+	border-radius: 60px;
+	padding: 0;
+}
+
+.get-tips {
+	background-image: url('https://images.yourstory.com/cs/wordpress/2016/11/leadership-lessons-from-travelling.jpg');
+	background-size: cover;
+	margin-bottom: 200px;
+}
+
+.get-tips-overlay {
+	/* background-color: rgba(255, 124, 91, 0.6); */
+	background-color: rgba(21, 52, 57, 0.8);
+}

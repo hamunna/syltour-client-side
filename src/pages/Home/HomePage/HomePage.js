@@ -1,9 +1,9 @@
 import React from 'react';
+import About from '../About/About';
 import Blog from '../Blog/Blog';
 import Gallery from '../Gallery/Gallery';
 import GetTravelTips from '../GetTravelTips/GetTravelTips';
 import HeroSection from '../HeroSection/HeroSection';
-import OurMotives from '../OurMotives/OurMotives';
 import Tours from '../Tours/Tours';
 
 const HomePage = () => {
@@ -13,13 +13,13 @@ const HomePage = () => {
 
 			<Tours></Tours>
 
-			{/* <OurMotives></OurMotives> */}
+			<About></About>
 
-			{/* <GetTravelTips></GetTravelTips> */}
+			<GetTravelTips></GetTravelTips>
 
 			{/* <Blog></Blog> */}
 
-			{/* <Gallery></Gallery> */}
+			<Gallery></Gallery>
 		</div>
 	);
 };

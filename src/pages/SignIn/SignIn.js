@@ -1,15 +1,14 @@
 import React from 'react';
 import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../hooks/useAuth';
-import useFirebase from '../../hooks/useFirebase';
 
 const SignIn = () => {
 
-	const { signInUsingGoogle, setIsLoading } = useFirebase();
+	const { signInUsingGoogle, setIsLoading } = useAuth();
 
 	const history = useHistory();
 	const location = useLocation();
-	const redirect_uri = location.state?.from || '/home';
+	const redirect_uri = location.state?.from || '/';
 
 	// Google SignIn Handle
 	const handleGoogleLogin = () => {
