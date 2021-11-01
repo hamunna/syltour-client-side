@@ -37,7 +37,9 @@ const Header = () => {
 						//Show this part if a user Logged In
 						: <NavDropdown className="theme-secondary-text" title={userIcon} id="navbarScrollingDropdown">
 
-							<p className="px-2">Hello, {user?.displayName}</p>
+							<img className="d-block mx-auto" style={{width: '60px', borderRadius: '50%'}} src={user?.photoURL} alt="" />
+							
+							<p className="px-2">Hello, <span style={{fontSize: '12px'}}>{user?.displayName}</span></p>
 
 							<NavDropdown.Item href="#action4">My Orders</NavDropdown.Item>
 							<NavDropdown.Divider />
