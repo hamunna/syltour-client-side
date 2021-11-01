@@ -19,7 +19,7 @@ const Tours = () => {
 				<Row xs={1} md={3} className="g-4">
 					{
 						tours.map(tour => <Tour
-							key={tour.id}
+							key={tour._id}
 							tour={tour}
 						></Tour>)
 					}
