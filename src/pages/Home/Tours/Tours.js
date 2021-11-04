@@ -12,7 +12,7 @@ const Tours = () => {
 
 
 	return (
-		<div style={{ paddingTop: '50px', marginBottom: '20px' }}>
+		<div id="tours" style={{ paddingTop: '50px', marginBottom: '20px' }}>
 			<Container>
 				<h1 className="my-5 text-center fw-bold theme-secondary-text border-bottom pb-4">Popular Tourist Spots</h1>
 

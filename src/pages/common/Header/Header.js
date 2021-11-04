@@ -6,6 +6,7 @@ import './Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 const userIcon = <FontAwesomeIcon icon={faUserCircle} />
 const search = <FontAwesomeIcon icon={faSearch} />
 
@@ -14,17 +15,18 @@ const Header = () => {
 
 
 	return (
-		<Navbar bg="transparent" variant="dark" className="border-bottom" fixed="top">
+		<Navbar bg="light" variant="light" className="border-bottom" fixed="top">
 			<Container>
-				<Navbar.Brand href="#home" className="fw-bold h4">
+				<Navbar.Brand as={Link} to="/" className="fw-bold h4">
 					<span className="theme-secondary-text">Syl</span>
 					<span className="">Tour</span>
 				</Navbar.Brand>
 
 				<Nav className="me-auto">
-					<Nav.Link href="/home">Home</Nav.Link>
-					<Nav.Link href="/home#places">Best Places</Nav.Link>
-					<Nav.Link href="/home#blog">Blog</Nav.Link>
+					<Nav.Link as={HashLink} to="/home#hero-section">Home</Nav.Link>
+					<Nav.Link as={HashLink} to="/home#tours">Best Places</Nav.Link>
+					<Nav.Link as={HashLink} to="/home#about">About</Nav.Link>
+					<Nav.Link as={HashLink} to="/home#gallery">Gallery</Nav.Link>
 
 				</Nav>
 
@@ -41,17 +43,17 @@ const Header = () => {
 							
 							<p className="px-2">Hello, <span style={{fontSize: '12px'}}>{user?.displayName}</span></p>
 
-							<NavDropdown.Item href="#action4">My Orders</NavDropdown.Item>
+							<NavDropdown.Item as={Link} to="/myOrders">My Orders</NavDropdown.Item>
 							<NavDropdown.Divider />
 
-							<NavDropdown.Item href="#action6">Add New Service</NavDropdown.Item>
+							<NavDropdown.Item as={Link} to="/addNewService">Add New Service</NavDropdown.Item>
 							<NavDropdown.Divider />
 
-							<NavDropdown.Item href="#action5">Manage All Orders</NavDropdown.Item>
+							<NavDropdown.Item as={Link} to="/manageAllOrders">Manage All Orders</NavDropdown.Item>
 							<NavDropdown.Divider />
 
 							<button className="btn w-100 p-0 bg-warning" onClick={logOut}>
-								<NavDropdown.Item href="#action3">LogOut</NavDropdown.Item>
+								<NavDropdown.Item>LogOut</NavDropdown.Item>
 							</button>
 
 						</NavDropdown>
