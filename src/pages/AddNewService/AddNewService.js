@@ -12,7 +12,6 @@ const AddNewService = () => {
 	const imageRef = useRef();
 
 	const handleAddService = e => {
-		e.preventDefault();
 
 		const name = nameRef.current.value;
 		const description = descriptionRef.current.value;
@@ -22,7 +21,26 @@ const AddNewService = () => {
 
 		const newService = { name, description, basicPrice, discountPrice, image };
 
-		fetch('')
+		fetch('http://localhost:5000/tours', {
+			method: 'POST',
+			headers: {
+				'content-type': 'application/json'
+			},
+			body: JSON.stringify(newService)
+		})
+			.then(res => res.json())
+			.then(data => {
+				if (data.insertedId) {
+					alert('Service Added Successfully!');
+
+					e.target.reset();
+				}
+				const addedService = data;
+				const newService = [...tours, addedService];
+
+				setTours(newService);
+			})
+		e.preventDefault();
 	}
 
 	return (
@@ -36,29 +54,29 @@ const AddNewService = () => {
 
 					<div class="row mb-3">
 						<div class="col-sm-10 col-md-12">
-							<input ref={nameRef} type="text" class="form-control" placeholder="Place Name" />
+							<input required ref={nameRef} type="text" class="form-control" placeholder="Place Name" />
 						</div>
 					</div>
 
 					<div class="row mb-3">
 						<div class="col-sm-10 col-md-12">
-							<textarea ref={descriptionRef} rows="5" className="w-100 form-control" placeholder="Description"></textarea>
+							<textarea required ref={descriptionRef} rows="5" className="w-100 form-control" placeholder="Description"></textarea>
 						</div>
 					</div>
 
 					<div class="row">
 						<div class="col">
-							<input ref={basicPriceRef} type="text" class="form-control" placeholder="Basic Price" />
+							<input required ref={basicPriceRef} type="number" class="form-control" placeholder="Basic Price ৳" />
 						</div>
 
 						<div class="col">
-							<input ref={discountPriceRef} type="text" class="form-control" placeholder="Discount Price" />
+							<input required ref={discountPriceRef} type="number" class="form-control" placeholder="Discount Price ৳" />
 						</div>
 					</div>
 
-					<div class="row mb-3">
+					<div class="row mt-3">
 						<div class="col-sm-10 col-md-12">
-							<input ref={imageRef} type="url" class="form-control" placeholder="Image URL" />
+							<input required ref={imageRef} type="url" class="form-control" placeholder="Image URL" />
 						</div>
 					</div>
 
