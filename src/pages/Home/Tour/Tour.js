@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Tour.css';
 
 const Tour = ({ tour }) => {
-	const { image, name, description, basicPrice, discountPrice, ratings, rated } = tour;
+	const { _id, image, name, description, basicPrice, discountPrice, ratings, rated } = tour;
 	return (
 		<Col>
 			<Card id="tour-card">
@@ -21,7 +21,7 @@ const Tour = ({ tour }) => {
 					<h5 className="my-3 fw-bold">Package: <span className="theme-primary-text fw-bolder">&#2547; {discountPrice}</span> <span className="text-secondary text-decoration-line-through">{basicPrice}</span></h5>
 				</Card.Body>
 
-				<Link className="theme-primary-btn text-center" to="/placeorder">
+				<Link className="theme-primary-btn text-center" to={`/placeOrder/${_id}`}>
 					<button className="btn text-white">Book Now</button>
 				</Link>
 			</Card>

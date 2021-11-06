@@ -35,16 +35,17 @@ function App() {
             <SignIn></SignIn>
           </Route>
 
-          {/* Dynamic Data Load
-          <Route path="/tourdetails/:tourId">
-
-          </Route> */}
-
-          <Route path="/placeorder">
+          {/* Dynamic Data Load to PlaceOrder */}
+          <PrivateRoute path="/placeOrder/:tourId">
             <PlaceOrder></PlaceOrder>
-          </Route>
+          </PrivateRoute>
 
           <PrivateRoute path="/myOrders">
+            <MyOrders></MyOrders>
+          </PrivateRoute>
+
+          {/* Dynamic Data Load to MyOrder */}
+          <PrivateRoute path="/myOrder/:tourId">
             <MyOrders></MyOrders>
           </PrivateRoute>
 
