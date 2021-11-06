@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { Container } from 'react-bootstrap';
-import useCart from '../../../hooks/useCart';
-import useProducts from '../../../hooks/useProducts';
+import { Alert, Container } from 'react-bootstrap';
+import useAuth from '../../../hooks/useAuth';
 
 const MyOrders = () => {
 
-	const [products] = useProducts();
-	
+	const [orders, setOrders] = useState([]);
+	const { user } = useAuth();
+
+	useEffect(() => {
+		fetch('http://localhost:5000/myOrders')
+			.then(res => res.json())
+			.then(data => setOrders(data));
+	}, []);
+
 	return (
 		<div className="my-5 py-3">
 			<Container>
@@ -14,24 +20,24 @@ const MyOrders = () => {
 				<h1 className="my-5 text-center fw-bold theme-secondary-text border-bottom pb-4">My Orders</h1>
 
 
-				{
-					products?.map(tour => <div className="card mb-3">
+				{ orders.length >= 1 ?
+					orders?.map(order => user.email === order?.serviceEmail && <div className="card mb-3">
 						< div className="row g-0" >
 
-							{/* <div className="col-md-4 my-3">
-								<img src={tour.image} className="img-fluid rounded-start" alt="..." />
-							</div> */}
+							<div className="col-md-4 my-3">
+								<img src={order?.singleTour?.image} className="img-fluid rounded-start" alt="..." />
+							</div>
 
 							<div className="col-md-8">
 								<div className="card-body">
-									<h5 className="card-title">{tour.name}</h5>
-									<p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+									<h5 className="card-title">{order?.singleTour?.name}</h5>
+									<p className="card-text">{order?.singleTour?.description}</p>
 									<button className="btn btn-danger">Remove</button>
 								</div>
 							</div>
 						</div>
-					</div >)
-					}
+					</div >) : <Alert variant="danger" className="text-center w-50 mx-auto">No Order to Show!</Alert>
+				}
 
 			</Container>
 		</div>

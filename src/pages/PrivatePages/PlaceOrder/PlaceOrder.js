@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Card } from 'react-bootstrap';
-import { useParams } from 'react-router';
+import { Redirect, useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import { addToDb, getStoredCart } from '../../../utilities/fakedb';
 import './PlaceOrder.css';
 
 const PlaceOrder = () => {
@@ -11,7 +10,6 @@ const PlaceOrder = () => {
 	const { user } = useAuth();
 	const [order, setOrder] = useState([]);
 	const [singleTour, setSingleTour] = useState({});
-
 	const { tourId } = useParams();
 
 	const userNameRef = useRef();
@@ -21,12 +19,6 @@ const PlaceOrder = () => {
 	const cityRef = useRef();
 	const districtRef = useRef();
 	const zipRef = useRef();
-
-
-
-	// const [products, setProducts] = useState([]);
-	// const [cart, setCart] = useState([]);
-	// const [displayProducts, setDisplayProducts] = useState([]);
 
 	const handleAddService = e => {
 
@@ -38,7 +30,7 @@ const PlaceOrder = () => {
 		const zip = zipRef.current.value;
 
 
-		const newOrder = { serviceName, serviceEmail, address1, address2, city, zip, tourId }
+		const newOrder = { singleTour, serviceName, serviceEmail, address1, address2, city, zip, tourId }
 
 
 		fetch('http://localhost:5000/myOrders', {
@@ -50,9 +42,8 @@ const PlaceOrder = () => {
 		})
 			.then(res => res.json())
 			.then(data => {
-				if (data.insertedId) {
+				if (data.insertedId /* && singleTour?._id */) {
 					alert('Order Placed Successfully!');
-
 					e.target.reset();
 				}
 				const addedService = data;
@@ -125,10 +116,7 @@ const PlaceOrder = () => {
 						</Card>
 					</div>
 
-					{/* <Link to="/myOrders"> */}
-					<button
-						type="submit" className="theme-primary-btn w-100 my-2 py-2">Place Order</button>
-					{/* </Link> */}
+					<button type="submit" className="theme-primary-btn w-100 my-2 py-2">Place Order</button>
 				</form>
 
 			</div>
