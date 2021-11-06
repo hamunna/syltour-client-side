@@ -53,6 +53,8 @@ const MyOrders = () => {
 								<div className="card-body">
 									<h5 className="card-title">{order?.singleTour?.name}</h5>
 									<p className="card-text">{order?.singleTour?.description}</p>
+									<h5 className="fs-4 fw-bolder mb-4"> ৳{order?.singleTour?.discountPrice}</h5>
+
 									<button className="btn btn-danger"
 									onClick={()=>handleDeleteUser(order._id)}
 									>Remove</button>
