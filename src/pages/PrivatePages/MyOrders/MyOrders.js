@@ -13,6 +13,27 @@ const MyOrders = () => {
 			.then(data => setOrders(data));
 	}, []);
 
+	// Deleting User
+	const handleDeleteUser = id => {
+		const proceed = window.confirm('Are you sure, You want to Delete?');
+
+		if (proceed) {
+			const url = `http://localhost:5000/myOrders/${id}`;
+			fetch(url, {
+				method: 'DELETE'
+			})
+				.then(res => res.json())
+				.then(data => {
+					if (data.deletedCount > 0) {
+						alert('deleted successfully!');
+						const remainingUsers = orders.filter(order => order._id !== id)
+						setOrders(remainingUsers);
+					}
+				})
+		}
+
+	}
+
 	return (
 		<div className="my-5 py-3">
 			<Container>
@@ -32,7 +53,9 @@ const MyOrders = () => {
 								<div className="card-body">
 									<h5 className="card-title">{order?.singleTour?.name}</h5>
 									<p className="card-text">{order?.singleTour?.description}</p>
-									<button className="btn btn-danger">Remove</button>
+									<button className="btn btn-danger"
+									onClick={()=>handleDeleteUser(order._id)}
+									>Remove</button>
 								</div>
 							</div>
 						</div>
