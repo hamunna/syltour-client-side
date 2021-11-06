@@ -59,11 +59,11 @@
 #hero-section .hero-bg-overlay {
   height: 700px;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(10, 10, 10, 0.8);
+  /* background: linear-gradient(90deg, rgba(131,58,180,0.5) 0%, rgba(122,55,187,0.5) 0%, rgba(130,49,218,0.5) 0%, rgba(13, 63, 3, 0.5) 50%, rgba(245,252,69,0.5) 100%); */
 }
 
 .hero-content {
-  width: 420px;
   text-align: center;
   padding-top: 200px;
 }
@@ -75,9 +75,38 @@
   letter-spacing: 5px;
 }
 
-.hero-content h3 {
+.hero-content span {
   font-size: 30px;
+  font-weight: 700;
+  display: inline-block;
 }
+
+.hero-content em {
+  color:steelblue;
+  font-size: 60px;
+}
+
+#hero-email-filed input, #hero-email-filed button {
+	width: 500px;
+	height: 50px;
+	border: none;
+	outline: none;
+  display: inline-block;
+	padding-left: 20px;
+	border-radius: 60px;
+}
+
+#hero-email-filed button {
+	width: 160px;
+	background-color: rgb(255, 124, 91);
+	color: #fff;
+	font-weight: 600;
+	margin-left: -80px;
+  margin-top: 30px;
+	border-radius: 60px;
+	padding: 0;
+}
+
 
 
 /* Chrome, Safari, Edge, Opera */
