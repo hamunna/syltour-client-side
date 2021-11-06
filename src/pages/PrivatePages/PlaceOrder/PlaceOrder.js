@@ -33,7 +33,7 @@ const PlaceOrder = () => {
 		const newOrder = { singleTour, serviceName, serviceEmail, address1, address2, city, zip, tourId }
 
 
-		fetch('http://localhost:5000/myOrders', {
+		fetch('https://damp-retreat-63788.herokuapp.com/myOrders', {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json'
@@ -53,7 +53,7 @@ const PlaceOrder = () => {
 	}
 
 	useEffect(() => {
-		const url = `http://localhost:5000/tours`;
+		const url = `https://damp-retreat-63788.herokuapp.com/tours`;
 		fetch(url)
 			.then(res => res.json())
 			.then(data => setOrder(data));

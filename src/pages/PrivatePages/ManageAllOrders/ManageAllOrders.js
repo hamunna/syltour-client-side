@@ -5,18 +5,18 @@ const ManageAllOrders = () => {
 	const [orders, setOrders] = useState([]);
 
 	useEffect(() => {
-		fetch('http://localhost:5000/myOrders')
+		fetch('https://damp-retreat-63788.herokuapp.com/myOrders')
 			.then(res => res.json())
 			.then(data => setOrders(data));
 	}, []);
 
 	// Deleting User
 	const handleDeleteUser = id => {
-		
+
 		const proceed = window.confirm('Are you sure, You want to Delete?');
 
 		if (proceed) {
-			const url = `http://localhost:5000/myOrders/${id}`;
+			const url = `https://damp-retreat-63788.herokuapp.com/myOrders/${id}`;
 			fetch(url, {
 				method: 'DELETE'
 			})
@@ -32,6 +32,12 @@ const ManageAllOrders = () => {
 
 	}
 
+	const updateStatus = () => {
+		document.getElementById('accepted').style.display = "inline";
+		document.getElementById('pending').style.display = "none";
+				
+	}
+
 	return (
 		<div className="my-5 py-3">
 			<Container>
@@ -39,7 +45,7 @@ const ManageAllOrders = () => {
 				<h1 className="my-5 text-center fw-bold theme-secondary-text border-bottom pb-4">Manage All Orders</h1>
 
 
-				{ orders.length >= 1 ?
+				{orders.length >= 1 ?
 					orders?.map(order => <div className="card mb-3">
 						< div className="row g-0" >
 
@@ -49,14 +55,15 @@ const ManageAllOrders = () => {
 
 							<div className="col-md-8">
 								<div className="card-body">
-									<h5 className="card-title">{order?.singleTour?.name} | <span className="text-warning">Pending...</span> <span className="text-success">Accepted!</span>
+									<h5 className="card-title">{order?.singleTour?.name} | <span style={{display: 'inline'}} className="text-warning" id="pending">Pending...</span> <span style={{display: 'none'}} className="text-success" id="accepted">Accepted!</span>
 									</h5>
 
 									<p className="card-text">{order?.singleTour?.description}</p>
 									<button className="btn btn-danger"
-									onClick={()=>handleDeleteUser(order._id)}
+										onClick={() => handleDeleteUser(order._id)}
 									>Remove</button>
-									<button className="btn btn-warning mx-5">Update</button>
+
+									<button onClick={updateStatus} id="update-btn" className="btn btn-warning mx-5">Update Status</button>
 								</div>
 							</div>
 						</div>

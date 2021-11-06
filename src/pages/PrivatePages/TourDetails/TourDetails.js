@@ -11,7 +11,7 @@ const TourDetails = () => {
 	const [singleTour, setSingleTour] = useState({});
 
 	useEffect(() => {
-		fetch("http://localhost:5000/tours")
+		fetch("https://damp-retreat-63788.herokuapp.com/tours")
 			.then((res) => res.json())
 			.then((data) => setToursDetails(data));
 	}, []);

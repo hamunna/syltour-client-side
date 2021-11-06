@@ -21,7 +21,7 @@ const AddNewService = () => {
 
 		const newService = { name, description, basicPrice, discountPrice, image };
 
-		fetch('http://localhost:5000/tours', {
+		fetch('https://damp-retreat-63788.herokuapp.com/tours', {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json'
