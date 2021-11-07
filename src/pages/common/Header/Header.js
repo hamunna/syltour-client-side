@@ -16,15 +16,15 @@ const Header = () => {
 
 	return (
 		<Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="border-bottom" fixed="top" >
-			<Container>				
+			<Container>
 
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
 
-				<Navbar.Brand as={Link} to="/" className="fw-bold h4">
-					<span className="theme-secondary-text">Syl</span>
-					<span className="">Tour</span>
-				</Navbar.Brand>
+					<Navbar.Brand as={Link} to="/" className="fw-bold h4">
+						<span className="theme-secondary-text">Syl</span>
+						<span className="">Tour</span>
+					</Navbar.Brand>
 
 					<Nav className="me-auto">
 						<Nav.Link as={HashLink} to="/home#hero-section">Home</Nav.Link>

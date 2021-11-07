@@ -29,7 +29,7 @@ const PlaceOrder = () => {
 		const zip = zipRef.current.value;
 
 
-		const newOrder = { singleTour, serviceName, serviceEmail, address1, address2, city, zip, tourId }
+		const newOrder = { singleTour, serviceName, serviceEmail, address1, address2, city, zip, tourId, status: {pending: "Pending", approved: " "} }
 
 
 		fetch('https://damp-retreat-63788.herokuapp.com/myOrders', {
