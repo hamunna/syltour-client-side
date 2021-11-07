@@ -44,7 +44,6 @@ const ManageAllOrders = () => {
 
 				<h1 className="my-5 text-center fw-bold theme-secondary-text border-bottom pb-4">Manage All Orders</h1>
 
-
 				{orders.length >= 1 ?
 					orders?.map(order => <div className="card mb-3">
 						< div className="row g-0" >

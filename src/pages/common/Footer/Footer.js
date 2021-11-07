@@ -16,11 +16,11 @@ const Footer = () => {
 						<div>
 
 							<h5 className="fw-bolder">Services</h5>
-							<p><small><a href="#" className="text-decoration-none text-white">Cosmetic Surgery</a></small></p>
-							<p><small><a href="#" className="text-decoration-none text-white">General Surgery</a></small></p>
-							<p><small><a href="#" className="text-decoration-none text-white">Authorized Diagonostic</a></small></p>
-							<p><small><a href="#" className="text-decoration-none text-white">New Technology</a></small></p>
-							<p><small><a href="#" className="text-decoration-none text-white">Accept Insurance</a></small></p>
+							<p><small><a href="#" className="text-decoration-none text-white">Travel Guide</a></small></p>
+							<p><small><a href="#" className="text-decoration-none text-white">Hotel Service</a></small></p>
+							<p><small><a href="#" className="text-decoration-none text-white">Adventure</a></small></p>
+							<p><small><a href="#" className="text-decoration-none text-white">Holiday Package</a></small></p>
+							<p><small><a href="#" className="text-decoration-none text-white">Jungle Camp</a></small></p>
 
 						</div>
 
@@ -30,9 +30,9 @@ const Footer = () => {
 							<h5 className="fw-bolder">Useful Links</h5>
 							<p><small><a href="#" className="text-decoration-none text-white">About Us</a></small></p>
 							<p><small><a href="#" className="text-decoration-none text-white">Our Services</a></small></p>
-							<p><small><a href="#" className="text-decoration-none text-white">Appointment</a></small></p>
-							<p><small><a href="#" className="text-decoration-none text-white">Treatment Policy</a></small></p>
+							<p><small><a href="#" className="text-decoration-none text-white">Terms &amp; Policy</a></small></p>
 							<p><small><a href="#" className="text-decoration-none text-white">Contact Us</a></small></p>
+							<p><small><a href="#" className="text-decoration-none text-white">Affiliation</a></small></p>
 
 						</div>
 					</div>
@@ -44,7 +44,7 @@ const Footer = () => {
 						<div>
 
 							<h5 className="fw-bolder">Support</h5>
-							<p><small><a href="#" className="text-decoration-none text-white">Health Center</a></small></p>
+							<p><small><a href="#" className="text-decoration-none text-white">Help</a></small></p>
 							<p><small><a href="#" className="text-decoration-none text-white">Terms of Service</a></small></p>
 							<p><small><a href="#" className="text-decoration-none text-white">Privacy Policy</a></small></p>
 							<p><small><a href="#" className="text-decoration-none text-white">Our Pricing</a></small></p>
@@ -59,7 +59,12 @@ const Footer = () => {
 								<span className="fs-3 text-white fw-bold">Tour</span>
 							</Link>
 							<p><small><strong>Location: </strong>South Chowhatta, Sylhet</small></p>
-							<p><small><strong>Phone: </strong>++8801787654321</small></p>
+							<p>
+								<small><strong>Phone-1: </strong>+8801787654321</small>
+								<br />
+								<small><strong>Phone-2: </strong>+8801943218765</small>
+							</p>
+							
 							<p><small><strong>Email: </strong>info@syltour.com</small></p>
 
 							<div className="d-flex gap-4">

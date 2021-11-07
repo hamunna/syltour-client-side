@@ -69,15 +69,15 @@
 }
 
 .hero-content h1 {
-  font-size: 72px;
+  font-size: 6vw;
   font-weight: 700;
   font-style: italic;
   letter-spacing: 5px;
 }
 
 .hero-content span {
-  font-size: 30px;
-  font-weight: 700;
+  font-size: 3vw;
+  /* font-weight: 700; */
   display: inline-block;
 }
 
@@ -87,7 +87,7 @@
 }
 
 #hero-email-filed input, #hero-email-filed button {
-	width: 500px;
+	width: 50vw;
 	height: 50px;
 	border: none;
 	outline: none;

@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Card } from 'react-bootstrap';
-import { Redirect, useParams } from 'react-router';
-import { Link } from 'react-router-dom';
+import { useParams } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 import './PlaceOrder.css';
 
@@ -42,7 +41,7 @@ const PlaceOrder = () => {
 		})
 			.then(res => res.json())
 			.then(data => {
-				if (data.insertedId /* && singleTour?._id */) {
+				if (data.insertedId ) {
 					alert('Order Placed Successfully!');
 					e.target.reset();
 				}
@@ -74,11 +73,11 @@ const PlaceOrder = () => {
 
 				<form onSubmit={handleAddService}>
 					<div className="mb-3">
-						<input type="text" ref={userNameRef} className="form-control" defaultValue={user?.displayName} />
+						<input type="text" ref={userNameRef} className="form-control" value={user?.displayName} readOnly />
 					</div>
 
 					<div className="mb-3">
-						<input type="text" ref={userEmailRef} className="form-control" defaultValue={user?.email} />
+						<input type="text" ref={userEmailRef} className="form-control" value={user?.email} readOnly />
 					</div>
 
 					<div className="mb-3">
