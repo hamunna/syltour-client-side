@@ -48,7 +48,7 @@ const ManageAllOrders = () => {
 
 	const handleOrderStatus = id => {
 
-		const url = `http://localhost:5000/myOrders/${id}`;
+		const url = `https://damp-retreat-63788.herokuapp.com/myOrders/${id}`;
 		fetch(url, {
 			method: 'PUT',
 			headers: {
